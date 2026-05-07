@@ -74,7 +74,7 @@ public class ToolboxCustomValidation {
 
         try {
             // Set and check license key. If the license key is not valid, an exception is thrown.
-            Sdk.initialize("insert-license-key-here", null);
+            Sdk.initialize("<-- insert license key -->", null);
 
             String pdfPath = args[0];
             String iniPath = args[1];
@@ -197,7 +197,7 @@ public class ToolboxCustomValidation {
             this.iniEncryption = iniFile.getValue("File", "Encryption");
             this.iniFileSize = iniFile.getValue("File", "FileSize");
             this.iniEmbedding = iniFile.getValue("Fonts", "Embedding");
-            this.embeddingExceptionFonts = iniFile.getKeysMatchingPattern("Fonts", "EmbeddingExcFont\\d+");
+            this.embeddingExceptionFonts = iniFile.getKeysMatchingPattern("Fonts", "EmbeddingExcFont\\\d+");
         }
 
         public boolean validateDocument() throws IOException, CorruptException, ConformanceException, UnsupportedFeatureException, ToolboxException {
@@ -368,7 +368,7 @@ public class ToolboxCustomValidation {
 
         public static Conformance parseVersionString(String version) {
             // Extract the major and minor version numbers (e.g., "1.7")
-            String[] versionParts = version.split("\\.");
+            String[] versionParts = version.split("\\\\.");
             if (versionParts.length == 2) {
                 String majorMinorVersion = versionParts[0] + "." + versionParts[1];
                 Conformance conformance = versionMap.get(majorMinorVersion);
@@ -454,7 +454,7 @@ public class ToolboxCustomValidation {
             }
 
             // If not a named size, try to parse it as a custom size
-            Pattern pattern = Pattern.compile("(\\d+(\\.\\d+)?)\\s*x\\s*(\\d+(\\.\\d+)?)(\\s*(pt|in|cm|mm))?", Pattern.CASE_INSENSITIVE);
+            Pattern pattern = Pattern.compile("(\\\\d+(\\\\.\\\\d+)?)\\\\s*x\\\\s*(\\\\d+(\\\\.\\\\d+)?)(\\\\s*(pt|in|cm|mm))?", Pattern.CASE_INSENSITIVE);
             Matcher matcher = pattern.matcher(maxPageSize);
             if (!matcher.matches()) {
                 throw new IllegalArgumentException("Invalid MaxPageSize format: " + maxPageSize);
@@ -482,7 +482,7 @@ public class ToolboxCustomValidation {
                 return 3; // Default tolerance in points
             }
 
-            Pattern pattern = Pattern.compile("(\\d+(\\.\\d+)?)\\s*(%)?", Pattern.CASE_INSENSITIVE);
+            Pattern pattern = Pattern.compile("(\\\\d+(\\\\.\\\\d+)?)\\\\s*(%)?", Pattern.CASE_INSENSITIVE);
             Matcher matcher = pattern.matcher(sizeToleranceStr);
             if (!matcher.matches()) {
                 throw new IllegalArgumentException("Invalid SizeTolerance format: " + sizeToleranceStr);

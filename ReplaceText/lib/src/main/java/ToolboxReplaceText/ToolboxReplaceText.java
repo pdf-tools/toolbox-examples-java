@@ -76,7 +76,7 @@ public class ToolboxReplaceText {
 
         try {
             // Set and check license key. If the license key is not valid, an exception is thrown.
-            Sdk.initialize("insert-license-key-here", null);
+            Sdk.initialize("<-- insert license key -->", null);
 
             String inPath = args[0];
             String outPath = args[1];
@@ -199,8 +199,22 @@ public class ToolboxReplaceText {
         String[] parts = fragment.getFont().getBaseFont().split("-");
         String family = parts[0];
         String style = parts.length > 1 ? parts[1] : null;
-        // Create a new font object
-        Font font = Font.createFromSystem(doc, family, style, true);
+        // Create a new font object, falling back to common system fonts if the
+        // original font is not installed
+        Font font = null;
+        for (String candidate : new String[] { family, "Arial", "Helvetica" }) {
+            try {
+                font = Font.createFromSystem(doc, candidate, style, true);
+                if (!candidate.equals(family))
+                    System.out.println("Fallback font '" + candidate + "' was selected, because default '" + family + "' font was not found on the machine.");
+                break;
+            } catch (Exception e) {
+                continue;
+            }
+        }
+        if (font == null)
+            throw new RuntimeException("Could not find font '" + family + "' or any fallback (Arial, Helvetica) on this system. " +
+                "Install the '" + family + "' font and try again.");
         // Create a text generator and set the original fragment's properties
         try (TextGenerator textGenerator = new TextGenerator(text, font, fragment.getFontSize(), null)) {
             textGenerator.setCharacterSpacing(fragment.getCharacterSpacing());

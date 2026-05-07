@@ -31,7 +31,8 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Paths;
 
-import com.pdftools.toolbox.*;
+import com.pdftools.toolbox.GenericException;
+import com.pdftools.toolbox.Sdk;
 import com.pdftools.toolbox.sys.FileStream;
 import com.pdftools.toolbox.pdf.content.ContentExtractor;
 import com.pdftools.toolbox.pdf.content.ImageElement;
@@ -54,7 +55,7 @@ public class ToolboxImageExtraction {
 
         try {
             // Set and check license key. If the license key is not valid, an exception is thrown.
-            Sdk.initialize("insert-license-key-here", null);
+            Sdk.initialize("<-- insert license key -->", null);
 
             String inPath = args[0];
             String outputDir = args[1];

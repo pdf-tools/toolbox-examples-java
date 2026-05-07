@@ -58,7 +58,7 @@ public class ToolboxRotatePages {
 
         try {
             // Set and check license key. If the license key is not valid, an exception is thrown.
-            Sdk.initialize("insert-license-key-here", null);
+            Sdk.initialize("<-- insert license key -->", null);
 
             int[] pageNumbers = new int[args.length - 2];
             for (int i = 0; i < args.length - 2; i++) {

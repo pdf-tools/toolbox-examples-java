@@ -51,7 +51,7 @@ public class ToolboxFileExtraction {
 
         try {
             // Set and check license key. If the license key is not valid, an exception is thrown.
-            Sdk.initialize("insert-license-key-here", null);
+            Sdk.initialize("<-- insert license key -->", null);
 
             String inputFile = args[0];
             String outputDir = args[1];

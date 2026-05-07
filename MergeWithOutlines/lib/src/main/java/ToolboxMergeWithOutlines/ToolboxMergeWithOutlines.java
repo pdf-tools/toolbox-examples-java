@@ -59,7 +59,7 @@ public class ToolboxMergeWithOutlines {
 
         try {
             // Set and check license key. If the license key is not valid, an exception is thrown.
-            Sdk.initialize("insert-license-key-here", null);
+            Sdk.initialize("<-- insert license key -->", null);
 
             String outPath = args[args.length - 1];
             String[] inPaths = Arrays.copyOfRange(args, 0, args.length - 1);
