@@ -69,7 +69,7 @@ public class ToolboxAddImageMask {
 
         try {
             // Set and check license key. If the license key is not valid, an exception is thrown.
-            Sdk.initialize("insert-license-key-here", null);
+            Sdk.initialize("<-- insert license key -->", null);
 
             String inPath = args[0];
             String imageMaskPath = args[1];

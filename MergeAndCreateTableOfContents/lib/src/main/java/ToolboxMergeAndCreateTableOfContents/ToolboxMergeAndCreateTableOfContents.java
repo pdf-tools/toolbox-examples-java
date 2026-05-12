@@ -66,7 +66,7 @@ public class ToolboxMergeAndCreateTableOfContents {
 
         try {
             // Set and check license key. If the license key is not valid, an exception is thrown.
-            Sdk.initialize("insert-license-key-here", null);
+            Sdk.initialize("<-- insert license key -->", null);
 
             String outPath = args[args.length - 1];
 

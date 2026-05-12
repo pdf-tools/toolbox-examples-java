@@ -80,7 +80,7 @@ public class ToolboxCreateTaggedPdf {
             return;
         }
 
-        Sdk.initialize("insert-license-key-here", null);
+        Sdk.initialize("<-- insert license key -->", null);
 
         String imagePath = args[0];
         String outPath = args[1];

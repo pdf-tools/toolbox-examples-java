@@ -76,7 +76,7 @@ public class ToolboxAddFormFields {
 
         try {
             // Set and check license key. If the license key is not valid, an exception is thrown.
-            Sdk.initialize("insert-license-key-here", null);
+            Sdk.initialize("<-- insert license key -->", null);
 
             // Get the command line arguments
             String inPath = args[0];
