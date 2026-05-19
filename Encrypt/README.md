@@ -71,7 +71,7 @@ Before importing the project, ensure you have the following installed on your sy
 
   ```bash
   mvn clean install
-  mvn exec:java -Dexec.mainClass="ToolboxEncrypt.ToolboxEncrypt" -Dexec.args="<inputPath> <UserPassword> <OwnerPassword> <outputPath>"
+  mvn exec:exec -Dexec.programArgs="<inputPath> <UserPassword> <OwnerPassword> <outputPath>"
   ```
 
 ### Using Gradle

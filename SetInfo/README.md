@@ -71,7 +71,7 @@ Before importing the project, ensure you have the following installed on your sy
 
   ```bash
   mvn clean install
-  mvn exec:java -Dexec.mainClass="ToolboxSetInfo.ToolboxSetInfo" -Dexec.args="<inputPath> <key> <value> <outputPath>"
+  mvn exec:exec -Dexec.programArgs="<inputPath> <key> <value> <outputPath>"
   ```
 
 ### Using Gradle

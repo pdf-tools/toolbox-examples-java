@@ -71,7 +71,7 @@ Before importing the project, ensure you have the following installed on your sy
 
   ```bash
   mvn clean install
-  mvn exec:java -Dexec.mainClass="ToolboxAddImage.ToolboxAddImage" -Dexec.args="<inputPath> <imagePath> <pageNumber> <outputPath>"
+  mvn exec:exec -Dexec.programArgs="<inputPath> <imagePath> <pageNumber> <outputPath>"
   ```
 
 ### Using Gradle

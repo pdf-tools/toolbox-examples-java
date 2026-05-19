@@ -71,7 +71,7 @@ Before importing the project, ensure you have the following installed on your sy
 
   ```bash
   mvn clean install
-  mvn exec:java -Dexec.mainClass="ToolboxFileEmbedding.ToolboxFileEmbedding" -Dexec.args="<inputPath> <fileToEmbed> <outputPath> [<page>]"
+  mvn exec:exec -Dexec.programArgs="<inputPath> <fileToEmbed> <outputPath> [<page>]"
   ```
 
 ### Using Gradle
