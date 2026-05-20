@@ -71,7 +71,7 @@ Before importing the project, ensure you have the following installed on your sy
 
   ```bash
   mvn clean install
-  mvn exec:java -Dexec.mainClass="ToolboxAddText.ToolboxAddText" -Dexec.args="<inputPath> <textString> <outputPath>"
+  mvn exec:exec -Dexec.programArgs="<inputPath> <textString> <outputPath>"
   ```
 
 ### Using Gradle

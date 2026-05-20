@@ -71,7 +71,7 @@ Before importing the project, ensure you have the following installed on your sy
 
   ```bash
   mvn clean install
-  mvn exec:java -Dexec.mainClass="ToolboxSplit.ToolboxSplit" -Dexec.args="<inputPath> <firstPage> <lastPage> <outputPath>"
+  mvn exec:exec -Dexec.programArgs="<inputPath> <firstPage> <lastPage> <outputPath>"
   ```
 
 ### Using Gradle
