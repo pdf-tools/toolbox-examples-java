@@ -23,5 +23,5 @@ java {
 }
 
 dependencies {
-    implementation("com.pdftools:toolbox:1.13.0")
+    implementation("com.pdftools:toolbox:1.14.0")
 }
